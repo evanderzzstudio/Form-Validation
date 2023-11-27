@@ -6,6 +6,7 @@ const passwordInput = document.querySelector("#password")
 const passwordConfirmInput = document.querySelector("#password-confirmation")
 const termsInput = document.querySelector("#terms")
 
+
 // TODO: Create an event listener for when the form is submitted and do the following inside of it.
 form.addEventListener("submit", e => {
   //    TODO: Create an array to store all error messages and clear any old error messages
@@ -26,13 +27,15 @@ form.addEventListener("submit", e => {
     errorMessages.push("Password must match")
   }
   //      4. Ensure the terms checkbox is checked
-  if ()
-    //    TODO: If there are any errors then prevent the form from submitting and show the error messages
+  if (!termsInput.checked) {
+    errorMessages.push("You must accept the terms")
+  }
+  //    TODO: If there are any errors then prevent the form from submitting and show the error messages
 
-    if (errorMessages.length > 0) {
-      e.preventDefault()
-      showErrors(errorMessages)
-    }
+  if (errorMessages.length > 0) {
+    e.preventDefault()
+    showErrors(errorMessages)
+  }
 
   console.log(errorMessages)
 })
